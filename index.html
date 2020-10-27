@@ -1,0 +1,98 @@
+<h1>GIT</h1>
+
+<!-- Basic Git Commands -->
+<ul>
+  <li> <b>git init:</b> initializes git repository </li>
+  <li> <b>ls -a</b> shows the hidden files and git. </li>
+  <li> <b>git status</b> shows the staging area. Also shows if there is any modifications in the files. </li>
+  <li> <b>git add </b> adds the file into the staging area to start tracking changes.
+    <ul>
+      <li> <b> git add chapter1.txt</b> adds chapter1.txt file into the staging area.</li>
+      <li> <b>git add .</b> adds all the files inside the current directory into the staging area. Useful to add multiple files at once, rather than adding them one by one . </li>
+    </ul>
+  </li>
+  <li> <b> git commit </b> commits the changes.
+    <ul>
+      <li> <b>git commit -m “Complete Chapter 1”</b> using -m flag adds a comment message to the commit. Message should be in present tense. </li>
+    </ul>
+  </li>
+  <li> <b>git log </b> shows the commits that are done. </li>
+  <li> <b> git checkout</b> reverts back to the last position in our local repository.
+    <ul>
+      <li><b> git checkout chapter3.txt </b> </li>
+    </ul>
+  </li>
+  <li> <b>git diff</b> shows the differences between the current version of the file and the last save point in our git repository.
+    <ul>
+      <li> <b>git diff chapter3.txt</b> will show the differences between the versions of chapter3.txt inside the git repository. </li>
+    </ul>
+  </li>
+  <li> <b>git rm --cached -r .</b> will remove all of these things have been removed from the Git staging area. ( r is the recursive flag) </li>
+  <li> <b>--cached</b> flag is only removing files from the staging area but leaving them in the working directory. Useful when you may want to keep the file on your hard drive but not have Git track it anymore. </li>
+</ul>
+
+<p>Staging area is like a stage where the files that are going to be tracked, perform. Files in the staging are ready to be committed. </p>
+<p>Staging area is a good place to try and figure out what are the things you want Git to ignore and what are the things you want to be tracked.</p>
+
+<img src="images/staging area.png" alt="staging-area-img">
+
+<p>Commiting in 3 steps : </p>
+<img src="images/commitsteps.png" alt="commitsteps-img">
+
+<h2>Github</h2>
+
+<p>Pushing commits onto Github:</p>
+<p>We should first create a “remote”, so it’s telling my local Git repository that I’ve created a
+  remote repository somewhere on the internet and I want to transfer all of my commits over there.</p>
+<p> <b>Local</b> repository is in your <b>computer</b>, <b>remote</b> repository is on the <b>internet</b> , namely github. </p>
+
+<ul>
+  <li> <b> git remote add origin “url” </b>
+    <ul>
+      <li>(origin is the name of the remote. You can name it anything you want but naming it origin is highly recommended since it’s conventional naming.)</li>
+      <li>(url is the our remote repository’s url.)</li>
+      <li> <b>git remote add origin https://github.com/onuraksar/Story.git</b> </li>
+    </ul>
+  </li>
+
+  <li> <b>git push -u origin master</b> pushes your local repository to the remote repository using the -u flag.
+    <ul>
+      <li> origin is the name of the remote.</li>
+      <li> master is the name of the branch.</li>
+      <li>Master branch is simply the default branch or the main branch of all of your commits or save files and it is sequential.</li>
+    </ul>
+  </li>
+
+  <li> <b>git clone</b> clones the remote repository to local repository. ( vice versa of push). Cloning basically downloads the code files into your system. </li>
+
+</ul>
+
+<h2>gitignore</h2>
+
+<p> Put the unnecessary files and files with sensitive information into the gitignore before you are commiting.</p>
+<ol>
+  <li><b>touch .gitignore </b> //create the gitignore file. </li>
+  <li><b> start .gitignore </b> // open the gitignore file in a text editor. </li>
+  <li>Add the file names in each line on the text editor.</li>
+  <li>Save the .gitignore file.</li>
+</ol>
+<p>You can check files by using <b> git status</b> command.</p>
+<p>You can also check <a href="https://github.com/github/gitignore">Github</a> for useful gitignore templates</p>
+
+<h2>Branching and Merging</h2>
+<p>Sometimes you are developing new feautures, fixing bugs and all of these things may break your main project so you don’t want to do it on the <b>master branch</b>.</p>
+<p>You only want to put it onto the master branch once you’ve tested, once you know <b>everything is working fine</b>.</p>
+<p>Therefore instead of continuing to commit to the master branch, which is the main branch, we can also create a <b> side branch</b>. And we can start commiting to this new branch or <b>experimental branch</b>. Simultaneously we can continue working
+  on the main branch as well.</p>
+<p>If at some point in the future that we decide that experiment was successful and we’d like to <b>merge</b> it back to the main branch by placing a <b>merge request</b> in.
+  Then we can continue from here onto the next commit or we can make more branches.</p>
+<ul>
+  <li> <b>git branch branchname</b> creates a new branch.
+    <ul>
+      <li> <b>git branch alien-plot</b> creates a new branch named “alien-plot”. </li>
+      <li> <b>git branch</b> prints the branches you have. * points to the current branch.</li>
+    </ul>
+  </li>
+  <li> <b> git checkout alien-plot</b> switches to other branch named "alien-plot".</li>
+  <li> <b>git merge alien-plot</b> merges alien-plot branch into the master branch. ( while we are inside the master branch) </li>
+</ul>
