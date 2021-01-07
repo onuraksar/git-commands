@@ -1,40 +1,46 @@
-<h1>GIT</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git Commands</title>
+</head>
+<body>
+  <h1>GIT</h1>
+  <ul>
+    <li> <b>git init:</b> initializes git repository </li>
+    <li> <b>ls -a</b> shows the hidden files and git. </li>
+    <li> <b>git status</b> shows the staging area. Also shows if there is any modifications in the files. </li>
+    <li> <b>git add </b> adds the file into the staging area to start tracking changes.
+      <ul>
+        <li> <b> git add chapter1.txt</b> adds chapter1.txt file into the staging area.</li>
+        <li> <b>git add .</b> adds all the files inside the current directory into the staging area. Useful to add multiple files at once, rather than adding them one by one . </li>
+      </ul>
+    </li>
+    <li> <b> git commit </b> commits the changes.
+      <ul>
+        <li> <b>git commit -m “Complete Chapter 1”</b> using -m flag adds a comment message to the commit. Message should be in present tense. </li>
+      </ul>
+    </li>
+    <li> <b>git log </b> shows the commits that are done. </li>
+    <li> <b> git checkout</b> reverts back to the last position in our local repository.
+      <ul>
+        <li><b> git checkout chapter3.txt </b> </li>
+      </ul>
+    </li>
+    <li> <b>git diff</b> shows the differences between the current version of the file and the last save point in our git repository.
+      <ul>
+        <li> <b>git diff chapter3.txt</b> will show the differences between the versions of chapter3.txt inside the git repository. </li>
+      </ul>
+    </li>
+    <li> <b>git rm --cached -r .</b> will remove all of these things have been removed from the Git staging area. ( r is the recursive flag) </li>
+    <li> <b>--cached</b> flag is only removing files from the staging area but leaving them in the working directory. Useful when you may want to keep the file on your hard drive but not have Git track it anymore. </li>
+  </ul>
 
-<!-- Basic Git Commands -->
-<ul>
-  <li> <b>git init:</b> initializes git repository </li>
-  <li> <b>ls -a</b> shows the hidden files and git. </li>
-  <li> <b>git status</b> shows the staging area. Also shows if there is any modifications in the files. </li>
-  <li> <b>git add </b> adds the file into the staging area to start tracking changes.
-    <ul>
-      <li> <b> git add chapter1.txt</b> adds chapter1.txt file into the staging area.</li>
-      <li> <b>git add .</b> adds all the files inside the current directory into the staging area. Useful to add multiple files at once, rather than adding them one by one . </li>
-    </ul>
-  </li>
-  <li> <b> git commit </b> commits the changes.
-    <ul>
-      <li> <b>git commit -m “Complete Chapter 1”</b> using -m flag adds a comment message to the commit. Message should be in present tense. </li>
-    </ul>
-  </li>
-  <li> <b>git log </b> shows the commits that are done. </li>
-  <li> <b> git checkout</b> reverts back to the last position in our local repository.
-    <ul>
-      <li><b> git checkout chapter3.txt </b> </li>
-    </ul>
-  </li>
-  <li> <b>git diff</b> shows the differences between the current version of the file and the last save point in our git repository.
-    <ul>
-      <li> <b>git diff chapter3.txt</b> will show the differences between the versions of chapter3.txt inside the git repository. </li>
-    </ul>
-  </li>
-  <li> <b>git rm --cached -r .</b> will remove all of these things have been removed from the Git staging area. ( r is the recursive flag) </li>
-  <li> <b>--cached</b> flag is only removing files from the staging area but leaving them in the working directory. Useful when you may want to keep the file on your hard drive but not have Git track it anymore. </li>
-</ul>
+  <p>Staging area is like a stage where the files that are going to be tracked, perform. Files in the staging are ready to be committed. </p>
+  <p>Staging area is a good place to try and figure out what are the things you want Git to ignore and what are the things you want to be tracked.</p>
 
-<p>Staging area is like a stage where the files that are going to be tracked, perform. Files in the staging are ready to be committed. </p>
-<p>Staging area is a good place to try and figure out what are the things you want Git to ignore and what are the things you want to be tracked.</p>
-
-<img src="images/staging area.png" alt="staging-area-img">
+  <img src="images/staging area.png" alt="staging-area-img">
 
 <p>Commiting in 3 steps : </p>
 <img src="images/commitsteps.png" alt="commitsteps-img">
@@ -96,3 +102,5 @@
   <li> <b> git checkout alien-plot</b> switches to other branch named "alien-plot".</li>
   <li> <b>git merge alien-plot</b> merges alien-plot branch into the master branch. ( while we are inside the master branch) </li>
 </ul>
+</body>
+</html>
