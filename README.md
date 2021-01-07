@@ -20,7 +20,7 @@ Staging area is like a stage where the files that are going to be tracked, perfo
 
 Staging area is a good place to try and figure out what are the things you want Git to ignore and what are the things you want to be tracked.
 
-![staging-area-img](images/staging area.png)
+![staging-area-img](images/staging-area.png)
 
 Commiting in 3 steps :
 
